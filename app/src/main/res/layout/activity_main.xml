@@ -1,50 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/colorAccent"
     android:padding="32dp"
-    >
+    tools:context=".MainActivity">
+
     <ImageView
+        android:id="@+id/turkcellLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/turkcelllogo" />
+
+
+    <TextView
+        android:id="@+id/turkcellBaslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/turkcellLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="Turkcell Geleceği Yazan Kadınlar"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp" />
+
+    <LinearLayout
+        android:id="@+id/linearKul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/logo"/>
+        android:orientation="horizontal"
+        android:weightSum="2">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Kullanıcı adınızı giriniz"
-        android:layout_below="@id/logo"
-        android:id="@+id/kullaniciAdi"
-        android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/kulAdiTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/turkcellBaslik"
+            android:layout_weight="1"
+            android:text="Kullanıcı Adı :"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/kulAdiEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/turkcellBaslik"
+            android:layout_toRightOf="@id/kulAdiTv"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Şifrenizi giriniz"
-        android:layout_below="@id/kullaniciAdi"
-        android:id="@+id/kullaniciSifre"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/linarSifre"
+        android:layout_below="@id/linearKul"
+        android:weightSum="4">
+
+
+        <TextView
+            android:id="@+id/kulSifreTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Şifre :"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/kulSifreTv"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:text="GİRİŞ YAP"
+        android:layout_width="match_parent"
         android:id="@+id/btnGirisYap"
-        />
+        android:layout_below="@+id/linarSifre"
+        android:layout_marginTop="20dp"
+        android:text="GİRİŞ YAP"
+        android:layout_centerHorizontal="true"
+        android:background="#fdc908"
+        android:layout_height="wrap_content" />
 
-    <Button
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btnGirisYap"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:alpha="0.9"
+            android:layout_weight="2"
+            android:text="Kayıt ol"
+            android:background="#FFFFFF"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageButton
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="KAYIT OL"
-        android:id="@+id/btnKayitOl"
-        android:layout_below="@id/kullaniciSifre"/>
+        android:background="@drawable/ic_settings_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:background="@drawable/ic_help_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>
