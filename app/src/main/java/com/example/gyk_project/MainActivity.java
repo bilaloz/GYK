@@ -15,27 +15,32 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    ListView listSehirler;
-
-    String [] sehirler = {"İstanbul","Ankara","İzmir","Adana","Konya","Manisa","Karabük","Ağrı"};
+    EditText kulAdi,kulSifre;
+    Button btnGiris,btnKayıtOl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listSehirler = findViewById(R.id.listSehirler);
+        kulAdi = findViewById(R.id.kulAdiEt);
+        kulSifre = findViewById(R.id.sifreEdt);
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1,android.R.id.text1,sehirler);
-        listSehirler.setAdapter(arrayAdapter);
-        listSehirler.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        btnGiris=findViewById(R.id.btnGirisYap);
+        btnKayıtOl=findViewById(R.id.btnKayit);
+
+
+        btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this,
-                        "TIklanılan yer = "+sehirler[position],
-                        Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if (kulAdi.getText().toString().equals("bilal") && kulSifre.getText().toString().equals("1234")){
+                    Intent i = new Intent(MainActivity.this,ProfilAnasayfa.class);
+                    i.putExtra("kullanici",kulAdi.getText().toString());
+                    startActivity(i);
+
+                }
+                else
+                    Toast.makeText(MainActivity.this, "Kul adi veya şifre yanlış", Toast.LENGTH_SHORT).show();
             }
         });
 

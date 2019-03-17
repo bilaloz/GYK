@@ -51,6 +51,8 @@
             android:id="@+id/kulAdiEt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:hint="kul adi"
             android:layout_below="@id/turkcellBaslik"
             android:layout_toRightOf="@id/kulAdiTv"
             android:layout_weight="1" />
@@ -76,10 +78,14 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/sifreEdt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/kulSifreTv"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:hint="sifre"
+            android:inputType="textPassword"
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 
@@ -106,6 +112,7 @@
             android:alpha="0.9"
             android:layout_weight="2"
             android:text="Kayıt ol"
+            android:id="@+id/btnKayit"
             android:background="#FFFFFF"
             android:layout_height="wrap_content" />
 
